@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>TrailEcho | Zero-Cloud Trail Bioacoustics Companion</title>
+  <meta name="description" content="Offline open-weight bird call and trail bioacoustics classifier. Designed to make the screen the shortest part of your outdoor experience.">
+  <meta name="theme-color" content="#16382b">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">🌲</div>
+        <div>
+          <h1>TrailEcho</h1>
+          <span class="badge">100% Offline Edge AI</span>
+        </div>
+      </div>
+      <div class="header-controls">
+        <button id="themeToggle" class="icon-btn" title="Toggle outdoor sunlight contrast mode">
+          ☀️ Sunlight
+        </button>
+      </div>
+    </header>
+
+    <!-- Philosophy Banner -->
+    <section class="philosophy-banner">
+      <div class="banner-icon">🌿</div>
+      <div class="banner-text">
+        <h2>Designed to Touch Grass</h2>
+        <p>
+          Unlike apps built for screen addiction, TrailEcho runs locally on your device with <strong>zero cell signal required</strong>. 
+          It listens, identifies in milliseconds, speaks the field note, and immediately puts the screen to sleep so you can watch the canopy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Live Acoustic Visualizer Card -->
+    <section class="visualizer-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span id="liveIndicator" class="live-indicator"></span>
+          <span>Acoustic Spectrogram Monitor</span>
+        </div>
+        <span style="font-size: 0.8rem; color: var(--text-dim);">Sampling: 16 kHz - 48 kHz</span>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="spectrogramCanvas"></canvas>
+        <div id="canvasOverlay" class="canvas-overlay-text">
+          🎙️ Tap <strong>"Start Field Mic"</strong> or select a <strong>Trail Simulation</strong> to analyze calls
+        </div>
+      </div>
+
+      <div class="controls-grid">
+        <button id="btnToggleListen" class="btn-primary">
+          🎙️ Start Field Mic
+        </button>
+
+        <div class="simulation-select-group">
+          <select id="selectSpecies" class="select-species" title="Select a wildlife call to simulate"></select>
+          <button id="btnSimulate" class="btn-simulate">Simulate Call</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimum Screen Time Result Card -->
+    <section id="mstCard" class="mst-card">
+      <div class="mst-header">
+        <div class="species-titles">
+          <h3 id="speciesCommon">Song Sparrow</h3>
+          <span id="speciesScientific" class="scientific">Melospiza melodia</span>
+        </div>
+        <div id="confidenceVal" class="confidence-chip">
+          ⚡ 96% Match
+        </div>
+      </div>
+
+      <div class="field-details">
+        <div class="detail-block">
+          <label>Dominant Frequency</label>
+          <p id="peakHzVal">4200 Hz</p>
+        </div>
+        <div class="detail-block">
+          <label>Habitat & Elevation</label>
+          <p id="habitatVal">Brushy fields, wetlands, trailside thickets</p>
+        </div>
+        <div class="detail-block" style="grid-column: 1 / -1;">
+          <label>Acoustic Call Cadence</label>
+          <p id="callDescVal">Sweet, sweet, sweet, followed by a bright musical trill.</p>
+        </div>
+      </div>
+
+      <div id="fieldNoteVal" class="field-note-highlight">
+        🔭 Look for heavy breast streaking converging into a center spot. Often sings from top twigs of trailside shrubs.
+      </div>
+
+      <!-- Auto-Pocket Countdown Module -->
+      <div class="auto-pocket-box">
+        <div class="auto-pocket-info">
+          <div id="timerCircle" class="timer-circle">5</div>
+          <div class="auto-pocket-text">
+            <h4>Screen Sleeping in <span id="pocketCountdownText">seconds</span></h4>
+            <p>Pocket your phone and observe the surrounding trees directly.</p>
+          </div>
+        </div>
+        <button id="btnSleepNow" class="btn-sleep-now">Sleep Now</button>
+      </div>
+    </section>
+
+    <!-- Trail Journal Section -->
+    <section class="journal-section">
+      <div class="journal-header">
+        <h3>🎒 Trail Journal (Offline Encounters)</h3>
+        <div class="journal-actions">
+          <button id="btnExportJournal" class="icon-btn" title="Export markdown trail log">Export .md</button>
+          <button id="btnClearJournal" class="icon-btn" title="Clear journal">Clear</button>
+        </div>
+      </div>
+
+      <div id="journalList" class="journal-list">
+        <!-- Dynamically rendered journal items -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        TrailEcho • Hacktoberfest Open-Source AI Challenge (Week 1: Touch Grass) • 
+        Built with Open-Weight Edge Inference & Web Audio.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Screen Sleep / Pocket Mode Overlay -->
+  <div id="pocketSleepOverlay" class="pocket-sleep-overlay">
+    <div class="sleep-icon">🌲</div>
+    <h2>Screen Sleeping • Eyes on the Canopy</h2>
+    <p>TrailEcho is listening in the background. Tap anywhere on your screen to wake HUD.</p>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
