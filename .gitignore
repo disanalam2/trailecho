@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 .DS_Store
+trail_log.json
+test_trail_log.json
