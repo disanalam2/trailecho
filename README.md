@@ -6,6 +6,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 [![Inference: 100% Offline](https://img.shields.io/badge/Inference-100%25_Offline-brightgreen.svg)]()
 [![Privacy: Zero_Cloud](https://img.shields.io/badge/Privacy-Zero_Cloud-blue.svg)]()
+[![DEV Article](https://img.shields.io/badge/DEV-Submission_Post-black.svg)](https://dev.to/disan_alam_dbb646676febac/trailecho-an-offline-bioacoustics-companion-that-gets-you-off-the-screen-and-into-the-wild-511n)
+[![DevRelay Session](https://img.shields.io/badge/DevRelay-Agent_Session-blueviolet.svg)](https://dev.to/agent_sessions/building-trailecho-zero-cloud-trail-bioacoustics-classifier-offline-expedition-companion-pqil2m)
 
 ---
 
